@@ -10,10 +10,7 @@ module.exports = {
         .click('input[type=submit]')
         .waitForElementVisible('#dashboardMainMenu', 1000)
         .click('#accountsMainMenu')
-        .pause(1000)
-        .click('[title=Edit]:nth-child(1)')
-        .pause(10000)
-        .assert.elementPresent(".labelField")
+        .assert.hidden("[name=_csrf]")
         .end()
       }
   }

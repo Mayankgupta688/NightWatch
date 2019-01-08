@@ -1,7 +1,6 @@
 // Get Selenium and the drivers
 var seleniumServer = require('selenium-server');
 var chromedriver = require('chromedriver');
-var geckodriver = require('geckodriver');
 
 var config = {
   src_folders: [
@@ -15,8 +14,7 @@ var config = {
     server_path: seleniumServer.path,
     port: 4444, // Standard selenium port
     cli_args: {
-      'webdriver.chrome.driver': chromedriver.path,
-      'webdriver.gecko.driver': geckodriver.path
+      'webdriver.chrome.driver': chromedriver.path
     }
   },
   test_workers: {
@@ -45,22 +43,6 @@ var config = {
     chrome: {
       desiredCapabilities: {
         browserName: 'chrome',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-        nativeEvents: true
-      }
-    },
-    firefox: {
-      desiredCapabilities: {
-        browserName: 'firefox',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-        nativeEvents: true
-      }
-    },
-    safari: {
-      desiredCapabilities: {
-        browserName: 'safari',
         javascriptEnabled: true,
         acceptSslCerts: true,
         nativeEvents: true
